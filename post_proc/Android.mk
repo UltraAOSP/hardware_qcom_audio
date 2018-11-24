@@ -1,4 +1,4 @@
-ifneq ($(filter msm8974 msm8226 msm8084 msm8992 msm8994 msm8996 msm8909 msm8998 sdm845,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8974 msm8226 msm8084 msm8992 msm8994 msm8996 msm8909 msm8998 sdm845 sdm710,$(TARGET_BOARD_PLATFORM)),)
 
 LOCAL_PATH:= $(call my-dir)
 
@@ -38,12 +38,15 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
+
+LOCAL_HEADER_LIBRARIES += generated_kernel_headers
+
 include $(BUILD_SHARED_LIBRARY)
 endif
 
 ################################################################################
 
-ifneq ($(filter msm8992 msm8994 msm8996 msm8909 msm8998 sdm845,$(TARGET_BOARD_PLATFORM)),)
+ifneq ($(filter msm8992 msm8994 msm8996 msm8909 msm8998 sdm845 sdm710,$(TARGET_BOARD_PLATFORM)),)
 
 include $(CLEAR_VARS)
 
@@ -70,6 +73,9 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
+
+LOCAL_HEADER_LIBRARIES += generated_kernel_headers
+
 include $(BUILD_SHARED_LIBRARY)
 
 endif
@@ -103,6 +109,9 @@ LOCAL_C_INCLUDES := \
 
 LOCAL_HEADER_LIBRARIES += libhardware_headers
 LOCAL_HEADER_LIBRARIES += libsystem_headers
+
+LOCAL_HEADER_LIBRARIES += generated_kernel_headers
+
 include $(BUILD_SHARED_LIBRARY)
 
 endif
